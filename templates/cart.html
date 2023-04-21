@@ -1,0 +1,102 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>Cart</title>
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+    <div class="container">
+      <img src="../static/img/logo2.jpeg" alt="" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span><i id="bar" class="fas fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('shop')}}">Shop</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{url_for('blog')}}">Blog</a>
+          </li>
+          <li class="nav-item">
+              <a href="{{ url_for('cart') }}">
+                    <i class="fas fa-shopping-bag cart-icon active"></i>
+                </a>
+          </li>
+      </div>
+    </div>
+  </nav>
+
+  <section id="cart-home" class="pt-5 mt-5 container">
+    <h2 class="font-weight-bold pt-5">Shopping Cart</h2>
+    <hr>
+  </section>
+{% if cart %}
+  <section id="cart-container" class="container my-5">
+    <table width="100%">
+        <thead>
+            <tr>
+                <td>Remove</td>
+                <td>Image</td>
+                <td>Product</td>
+                <td>Price</td>
+                <td>Discounted Price</td>
+                <td>Quantity</td>
+                <td>Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart %}
+            <tr>
+              <td>
+                <a href="#" class="remove-from-cart-btn" data-product-id="{{ item.product_id }}">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>            
+                <td>
+                    <img class="img-fluid my-3" src="{{ item.image }}" width="100px" height="50px" alt="{{ item.name }}">
+                </td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.discount_price }}</td>
+                <td>{{ item.quantity }}</td>
+                {% if (item.discount_price == 0) %}
+                <td>{{ item.price*item.quantity}}</td>
+                  {% else %}
+                <td>{{ item.discount_price * item.quantity}}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </section>
+  
+
+  <section id="cart-total" class=" pt-5 mt-5 pl-4 container">
+    <div class="row my-5">
+        <h4 class="pr-5">Cart Total :</h4>
+        <h4 class="pr-5">{{ cart_total }}/-</h4>
+    </div>
+  </section>
+
+  <section id="checkout-btn" class="container pl-2">
+    <a href="#"><button class="buy-btn pl-4">Proceed to Checkout</button></a>
+  </section>
+  {% else %}
+    <section id="cart-empty" class="container my-5">
+        <h2>Your cart is empty.</h2>
+    </section>
+{% endif %}
+  <script type="module" src="../static/js/remove.js"></script>
+{% endblock %}

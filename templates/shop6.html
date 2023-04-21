@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Shop</title>
+{% endblock %}
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+    <div class="container">
+      <img src="../static/img/logo2.jpeg" alt="" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span><i id="bar" class="fas fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{url_for('shop')}}">Shop</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{url_for('blog')}}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('cart') }}">
+                <i class="fas fa-shopping-bag"></i>
+            </a>
+          </li>
+      </div>
+    </div>
+  </nav>
+
+  <section id="featured" class="my-5 py-5">
+    <div class="container mt-5 py-5">
+        <h2 class="font-weight-bold">Our Products</h2>
+        <hr>
+        <p>Here you can check out our new products with fair price on E-Store.</p>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/Shoes2/Brown casuals.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Brown Casuals">Brown Casuals</h5>
+            <h4 class="p-price" data-price="1544">1544/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/Shoes2/marc-jacobs-lace-up-shoes-for-men.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Marc Jacobs">Marc Jacobs</h5>
+            <h4 class="p-price" data-price="1249">1249/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/Shoes2/mens-casual-shoes-men-casual.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Casuals">Casuals</h5>
+            <h4 class="p-price" data-price="990">990/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/Shoes2/pair-of-navy-blue-skate-shoes.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Blue Skate Shoe">Blue Skate Shoe</h5>
+            <h4 class="p-price" data-price="1500">1500/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img  class="product-image img-fluid mb-3" src="../static/img/Shoes2/red-LED-shoes.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Red Led Shoes">Red Led Shoes</h5>
+            <h4 class="p-price" data-price="2650">2650/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/Shoes2/right-foot-all-black-sneaker.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Black Sneakers">Black Sneakers</h5>
+            <h4 class="p-price" data-price="3500">3500/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/Shoes2/shops_23.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Shoes">Shoes</h5>
+            <h4 class="p-price" data-price="999">999/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/Shoes2/white-lowtop-LED-shoes.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="White Led Shoes">White Led Shoes</h5>
+            <h4 class="p-price" data-price="1999">1999/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination ml-5 mt-5">
+          <li class="page-item"><a class="page-link" href="{{url_for('shop5')}}">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="{{url_for('shop5')}}">5</a></li>
+          <li class="page-item active"><a class="page-link" href="{{url_for('shop6')}}">6</a></li>
+        </ul>
+      </nav>
+
+</section>
+
+{% endblock %}

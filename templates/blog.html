@@ -1,0 +1,101 @@
+{% extends 'base.html'%}
+{% block head %}
+<title>Blog</title>
+{% endblock %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+    <div class="container">
+      <img src="../static/img/logo2.jpeg" alt="" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span><i id="bar" class="fas fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('shop')}}">Shop</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" href="{{url_for('blog')}}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('cart') }}">
+                    <i class="fas fa-shopping-bag cart-icon"></i>
+                </a>
+          </li>
+      </div>
+    </div>
+  </nav>
+
+  <section id="blog-home" class="pt-5 mt-5 container">
+    <h2 class="font-weight-bold pt-5">Blogs</h2>
+    <hr>
+  </section>
+
+  <section id="blog-container" class="container pt-5">
+    <div class="row">
+        <div class="post col-lg-6 col-md-6 col-12 pb-5">
+            <div class="post-img">
+                <img class="img-fluid" src="../static/img/blog/1.jpg" alt="">
+            </div>
+            <h3 class="text-center font-weight-normal pt-3">Summer wardrobe into Autumn wardrobe</h3>
+            <p class="text-center">Jan 20, 2023</p>
+        </div>
+        <div class="post col-lg-6 col-md-6 col-12 pb-5">
+            <div class="post-img">
+                <img class="img-fluid" src="../static/img/blog/2.jpg" alt="">
+            </div>
+            <h3 class="text-center font-weight-normal pt-3">Men's fashion in leather</h3>
+            <p class="text-center">Feb 21, 2023</p>
+        </div>
+        <div class="post col-lg-6 col-md-6 col-12 pb-5">
+            <div class="post-img">
+                <img class="img-fluid" src="../static/img/blog/3.jpg" alt="">
+            </div>
+            <h3 class="text-center font-weight-normal pt-3">Journey through gaming keeps evolving.</h3>
+            <p class="text-center">Mar 12, 2023</p>
+        </div>
+        <div class="post col-lg-6 col-md-6 col-12 pb-5">
+            <div class="post-img">
+                <img class="img-fluid" src="../static/img/blog/4.jpg" alt="">
+            </div>
+            <h3 class="text-center font-weight-normal pt-3">Color your life colourful</h3>
+            <p class="text-center">April 11, 2023</p>
+        </div>
+        <div class="col-lg-12 col-md-12 col-12 pb-5">
+            <div class="post-img">
+                <img class="w-100 img-fluid" src="../static/img/blog/banner.webp\" alt="">
+            </div>
+        </div>
+        <div class="post col-lg-4 col-md-6 col-12 pb-5">
+            <div class="post-img">
+                <img class="img-fluid" src="../static/img/blog/1.webp" alt="">
+            </div>
+            <h3 class="font-weight-normal pt-3">A step forward</h3>
+        </div>
+        <div class="post col-lg-4 col-md-6 col-12 pb-5">
+            <div class="post-img">
+                <img class="img-fluid" src="../static/img/blog/2.webp" alt="">
+            </div>
+            <h3 class="font-weight-normal pt-3">Take a 3D tour</h3>
+        </div>
+        <div class="post col-lg-4 col-md-6 col-12 pb-5">
+            <div class="post-img">
+                <img class="img-fluid" src="../static/img/blog/3.webp" alt="">
+            </div>
+            <h3 class="font-weight-normal pt-3">Shoes stroke professional passions</h3>
+        </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,439 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Shop</title>
+{% endblock %}
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+    <div class="container">
+      <img src="../static/img/logo2.jpeg" alt="" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span><i id="bar" class="fas fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{url_for('shop')}}">Shop</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{url_for('blog')}}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('cart') }}">
+                <i class="fas fa-shopping-bag"></i>
+            </a>
+          </li>
+      </div>
+    </div>
+  </nav>
+
+  <section id="featured" class="my-5 py-5">
+    <div class="container mt-5 py-5">
+        <h2 class="font-weight-bold">Our Products</h2>
+        <hr>
+        <p>Here you can check out our new products with fair price on E-Store.</p>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/featured/1.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Sports Boots">Sports Boots</h5>
+            <h4 class="p-price" data-price="7544">7544/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/featured/2.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Sports Boots">Sports Boots</h5>
+            <h4 class="p-price" data-price="3499">3499/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/featured/3.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Bag">Bag</h5>
+            <h4 class="p-price" data-price="1700">1700/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/featured/4.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Stylish Cap">Stylish Cap</h5>
+            <h4 class="p-price" data-price="799">799/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/1.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="T-Shirt">T-Shirt</h5>
+            <h4 class="p-price" data-price="600">600/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/10.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Watch">Watch</h5>
+            <h4 class="p-price" data-price="1500">1500/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/11.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Stylish Hat">Stylish Hat</h5>
+            <h4 class="p-price" data-price="849">849/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/12.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Casual Shoes">Casual Shoes</h5>
+            <h4 class="p-price" data-price="1289">1289/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/17.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Hoodie">Hoodie</h5>
+            <h4 class="p-price" data-price="2589">2589/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/18.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Cap">Cap</h5>
+            <h4 class="p-price" data-price="499">499/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/19.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Black Hoodie">Black Hoodie</h5>
+            <h4 class="p-price" data-price="3200">3200/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/2.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Sport Shoes">Sport Shoes</h5>
+            <h4 class="p-price" data-price="2899">2899/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/13.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Sonata Watch">Sonata Watch</h5>
+            <h4 class="p-price" data-price="952">952/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/14.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Boots">Boots</h5>
+            <h4 class="p-price" data-price="1980">1980/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/15.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Baby Cap">Baby Cap</h5>
+            <h4 class="p-price" data-price="545">545/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/16.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Purple T-Shirt">Purple T-Shirt</h5>
+            <h4 class="p-price" data-price="649">649/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/20.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Plazo">Plazo</h5>
+            <h4 class="p-price" data-price="1200">1200/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/21.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Shirt">Shirt</h5>
+            <h4 class="p-price" data-price="1599">1599/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/22.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Blue Kids Bag">Blue Kids Bag</h5>
+            <h4 class="p-price" data-price="770">770/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/23.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Shirt">Shirt</h5>
+            <h4 class="p-price" data-price="890">890/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/24.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="White T-Shirt">White T-shirt</h5>
+            <h4 class="p-price" data-price="670">670/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/25.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Red Round Neck Tees">Red Round Neck Tees</h5>
+            <h4 class="p-price" data-price="999">999/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/26.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Green Tees">Green Tees</h5>
+            <h4 class="p-price" data-price="700">700/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/3.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Sling Bag">Sling Bag</h5>
+            <h4 class="p-price" data-price="350">350/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+    <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/4.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Blue Boots">Blue Boots</h5>
+            <h4 class="p-price" data-price="1999">1999/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/5.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Cap">Cap</h5>
+            <h4 class="p-price" data-price="349">349/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/6.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Jacket">Jacket</h5>
+            <h4 class="p-price" data-price="2700">2700/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-12">
+            <img class="product-image img-fluid mb-3" src="../static/img/shop/7.jpg" alt="">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h5 class="p-name" data-name="Casual Shoes">Casual Shoes</h5>
+            <h4 class="p-price" data-price="1899">1899/-</h4>
+            <button id="buy-btn" class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination ml-5 mt-5">
+          <li class="page-item"><a class="page-link" href="{{url_for('shop')}}">Previous</a></li>
+          <li class="page-item active"><a class="page-link" href="{{url_for('shop')}}">1</a></li>
+          <li class="page-item"><a class="page-link" href="{{url_for('shop2')}}">2</a></li>
+          <li class="page-item"><a class="page-link" href="{{url_for('shop3')}}">3</a></li>
+          <li class="page-item"><a class="page-link" href="{{url_for('shop2')}}">Next</a></li>
+        </ul>
+      </nav>
+
+</section>
+
+{% endblock %}
